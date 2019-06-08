@@ -119,8 +119,15 @@ let 自动浏览 = () => {
                 while (领猫币 == null && timer < 20) {
                     sleep(1000);
                     ++timer;
+                    screen = captureScreen();
                     领猫币 = find领喵币();
+                    猫猫出现了 = findImage(screen, images.read("/sdcard/2019淘宝618全自动/点击得喵币按钮.jpg"));
+                    if (猫猫出现了 != null) {
+                        click(猫猫出现了.x + 20, 猫猫出现了.y + 20);
+                        break;
+                    }
                 }
+                back();
             } else if (找猫提示 != null) {
                 // 
                 log("看视频领猫币页面");
