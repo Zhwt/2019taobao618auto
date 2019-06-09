@@ -142,6 +142,7 @@ let 自动浏览 = () => {
                 back();
             } else if (点3个商品按钮 != null) {
                 log("点按钮页面");
+                sleep(1200);
                 // 自动转到商品页面
                 click(点3个商品按钮.x + 20, 点3个商品按钮.y + 20);
                 points = [{
@@ -161,6 +162,8 @@ let 自动浏览 = () => {
                         y: 1442
                     }
                 ];
+                sleep(1500);
+                swipe(492, 1384, 492, 384, 400);
                 for (i = 0; i < points.length; ++i) {
                     sleep(1000);
                     click(points[i].x, points[i].y);
@@ -203,5 +206,6 @@ events.onToast((toast) => {
 swipe(492, 384, 492, 1384, 400);
 toast("开始逛店铺");
 逛店铺();
+sleep(1000);
 toast("开始自动浏览");
 自动浏览();
